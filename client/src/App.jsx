@@ -4,9 +4,9 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Teams from "./components/Teams";
 import Players from "./components/Players";
-import Schedule from "./components/Schedule";
 import Standings from "./components/Standings";
 import Footer from "./components/Footer";
+import Schedule from "./components/schedule";
 
 function App() {
   return (

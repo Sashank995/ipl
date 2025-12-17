@@ -1,89 +1,141 @@
 const Home = () => {
   return (
-    <div className="space-y-14">
+    <div className="space-y-24">
 
-      {/* HERO SECTION */}
-      <section className="bg-gradient-to-r from-blue-900 to-indigo-900 text-white rounded-2xl p-10 flex flex-col md:flex-row justify-between items-center">
-        <div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Indian Premier League
+      {/* 1️⃣ HERO SECTION */}
+      <section className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-r from-indigo-950 via-blue-900 to-indigo-900">
+        <div className="absolute inset-0 bg-black/30" />
+
+        <div className="relative z-10 px-12 py-24 max-w-4xl text-white">
+          <h1 className="text-6xl font-extrabold leading-tight">
+            IPL Cricket
+            <span className="block text-yellow-400">
+              Like Never Before
+            </span>
           </h1>
-          <p className="text-lg text-gray-200">
-            Live scores, teams, players, match schedules & points table.
-          </p>
-        </div>
 
-        <div className="mt-6 md:mt-0 text-6xl">
-          🏏
+          <p className="mt-6 text-xl text-gray-200">
+            A premium platform for IPL fans to explore teams, players,
+            match schedules and live standings in one place.
+          </p>
+
+          <div className="mt-10 flex gap-6">
+            <a
+              href="/teams"
+              className="bg-yellow-400 text-black px-8 py-4 rounded-full font-semibold hover:scale-105 transition"
+            >
+              Explore Teams
+            </a>
+
+            <a
+              href="/schedule"
+              className="border border-white/40 px-8 py-4 rounded-full hover:bg-white/10 transition"
+            >
+              View Schedule
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* QUICK STATS */}
-      <section className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      {/* 2️⃣ LIVE STATS */}
+      <section className="grid grid-cols-1 md:grid-cols-4 gap-10">
         {[
-          { title: "Teams", value: "10+" },
-          { title: "Matches", value: "70+" },
-          { title: "Players", value: "250+" },
-          { title: "Seasons", value: "17" },
-        ].map((item, index) => (
+          { label: "IPL Teams", value: "10" },
+          { label: "Total Matches", value: "74" },
+          { label: "Star Players", value: "250+" },
+          { label: "Years of Legacy", value: "17" },
+        ].map((item, i) => (
           <div
-            key={index}
-            className="bg-white rounded-xl shadow p-6 text-center hover:scale-105 transition"
+            key={i}
+            className="backdrop-blur-xl bg-white/70 rounded-3xl shadow-lg p-10 text-center hover:-translate-y-2 transition"
           >
-            <h3 className="text-gray-500">{item.title}</h3>
-            <p className="text-3xl font-bold text-blue-900">
+            <p className="text-gray-500">{item.label}</p>
+            <p className="text-5xl font-bold text-indigo-900 mt-3">
               {item.value}
             </p>
           </div>
         ))}
       </section>
 
-      {/* FEATURED TEAMS */}
+      {/* 3️⃣ FEATURED MATCH */}
+      <section className="bg-white rounded-3xl shadow-xl p-12 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div>
+          <h2 className="text-3xl font-bold text-indigo-900">
+            Match of the Day
+          </h2>
+          <p className="mt-3 text-lg text-gray-600">
+            Chennai Super Kings vs Mumbai Indians
+          </p>
+          <p className="text-gray-400 mt-1">
+            March 22 • 7:30 PM IST
+          </p>
+        </div>
+
+        <a
+          href="/schedule"
+          className="bg-indigo-900 text-white px-10 py-4 rounded-full hover:bg-indigo-800 transition"
+        >
+          View Match Details
+        </a>
+      </section>
+
+      {/* 4️⃣ POPULAR TEAMS */}
       <section>
-        <h2 className="text-3xl font-bold mb-6 text-blue-900">
-          Popular IPL Teams
+        <h2 className="text-4xl font-bold text-indigo-900 mb-10">
+          Fan Favorite Teams
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {["CSK", "MI", "RCB"].map((team, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {["CSK", "MI", "RCB"].map((team, i) => (
             <div
-              key={index}
-              className="bg-white rounded-xl shadow p-6 hover:shadow-lg transition"
+              key={i}
+              className="relative bg-gradient-to-br from-white to-slate-100 rounded-3xl shadow-lg p-10 hover:shadow-2xl transition"
             >
-              <h3 className="text-xl font-semibold mb-2">
-                {team}
-              </h3>
-              <p className="text-gray-600">
-                One of the most successful IPL franchises.
+              <div className="text-6xl mb-6">🏏</div>
+              <h3 className="text-2xl font-semibold">{team}</h3>
+              <p className="text-gray-500 mt-3">
+                One of the most successful franchises in IPL history.
               </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* UPCOMING MATCHES */}
+      {/* 5️⃣ STAR PLAYERS */}
       <section>
-        <h2 className="text-3xl font-bold mb-6 text-blue-900">
-          Upcoming Matches
+        <h2 className="text-4xl font-bold text-indigo-900 mb-10">
+          Star Players
         </h2>
 
-        <div className="space-y-4">
-          {[
-            "CSK vs MI – 22 Mar",
-            "RCB vs KKR – 24 Mar",
-            "RR vs DC – 26 Mar",
-          ].map((match, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {["Virat Kohli", "MS Dhoni", "Rohit Sharma"].map((player, i) => (
             <div
-              key={index}
-              className="bg-white p-4 rounded-lg shadow flex justify-between items-center"
+              key={i}
+              className="bg-white rounded-3xl shadow-lg p-10 text-center hover:scale-105 transition"
             >
-              <span>{match}</span>
-              <span className="text-sm text-gray-500">
-                7:30 PM IST
-              </span>
+              <div className="text-6xl mb-4">👤</div>
+              <h3 className="text-xl font-semibold">{player}</h3>
+              <p className="text-gray-500 mt-2">IPL Superstar</p>
             </div>
           ))}
         </div>
+      </section>
+
+      {/* 6️⃣ FINAL CTA */}
+      <section className="text-center bg-gradient-to-r from-indigo-900 to-blue-900 rounded-3xl p-16 text-white">
+        <h2 className="text-4xl font-bold">
+          Join the IPL Experience
+        </h2>
+        <p className="mt-4 text-lg text-gray-200">
+          Stay updated with every match, team and player.
+        </p>
+
+        <a
+          href="/standings"
+          className="inline-block mt-8 bg-yellow-400 text-black px-10 py-4 rounded-full font-semibold hover:scale-105 transition"
+        >
+          View Points Table
+        </a>
       </section>
 
     </div>
