@@ -1,3 +1,5 @@
+import React from "react";
+
 const matches = [
   {
     matchNo: 1,
@@ -41,11 +43,12 @@ const Schedule = () => {
 
       {/* MATCH LIST */}
       <div className="space-y-6">
-        {matches.map((match, index) => (
+        {matches.map((match) => (
           <div
-            key={index}
+            key={match.matchNo}
             className="bg-white rounded-3xl shadow-lg p-8 flex flex-col md:flex-row justify-between items-center gap-6 hover:shadow-2xl transition"
           >
+
             {/* LEFT SECTION */}
             <div className="space-y-2">
               <p className="text-sm text-gray-400">
@@ -75,6 +78,7 @@ const Schedule = () => {
                 Match Center
               </button>
             </div>
+
           </div>
         ))}
       </div>

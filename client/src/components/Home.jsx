@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Home = () => {
   return (
     <div className="space-y-24">
@@ -19,20 +21,20 @@ const Home = () => {
             match schedules and live standings in one place.
           </p>
 
-          <div className="mt-10 flex gap-6">
-            <a
-              href="/teams"
+          <div className="mt-10 flex gap-6 flex-wrap">
+            <Link
+              to="/teams"
               className="bg-yellow-400 text-black px-8 py-4 rounded-full font-semibold hover:scale-105 transition"
             >
               Explore Teams
-            </a>
+            </Link>
 
-            <a
-              href="/schedule"
+            <Link
+              to="/schedule"
               className="border border-white/40 px-8 py-4 rounded-full hover:bg-white/10 transition"
             >
               View Schedule
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -71,12 +73,12 @@ const Home = () => {
           </p>
         </div>
 
-        <a
-          href="/schedule"
+        <Link
+          to="/schedule"
           className="bg-indigo-900 text-white px-10 py-4 rounded-full hover:bg-indigo-800 transition"
         >
           View Match Details
-        </a>
+        </Link>
       </section>
 
       {/* 4️⃣ POPULAR TEAMS */}
@@ -130,12 +132,12 @@ const Home = () => {
           Stay updated with every match, team and player.
         </p>
 
-        <a
-          href="/standings"
+        <Link
+          to="/standings"
           className="inline-block mt-8 bg-yellow-400 text-black px-10 py-4 rounded-full font-semibold hover:scale-105 transition"
         >
           View Points Table
-        </a>
+        </Link>
       </section>
 
     </div>
