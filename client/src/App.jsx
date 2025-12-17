@@ -6,8 +6,7 @@ import Teams from "./components/Teams";
 import Players from "./components/Players";
 import Standings from "./components/Standings";
 import Footer from "./components/Footer";
-import Schedule from "./components/schedule";
-
+import Schedule from "./components/Schedule";
 function App() {
   return (
     <BrowserRouter>
