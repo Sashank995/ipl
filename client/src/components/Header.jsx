@@ -11,7 +11,7 @@ const Header = () => {
           <Link to="/" className="hover:text-yellow-400">Home</Link>
           <Link to="/teams" className="hover:text-yellow-400">Teams</Link>
           <Link to="/players" className="hover:text-yellow-400">Players</Link>
-          <Link to="/schedule" className="hover:text-yellow-400">Schedule</Link>
+          {/* <Link to="/schedule" className="hover:text-yellow-400">Schedule</Link> */}
           <Link to="/standings" className="hover:text-yellow-400">Standings</Link>
         </nav>
 
